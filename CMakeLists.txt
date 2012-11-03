@@ -29,7 +29,14 @@ SET(LIBRARY_OUTPUT_PATH ${blobtastic_SOURCE_DIR}/lib)
 ADD_LIBRARY(blobtastic SHARED ${SOURCES})
 TARGET_LINK_LIBRARIES(blobtastic opencv_core opencv_highgui opencv_imgproc)
 
+IF(WIN32)
+install(FILES ${INCLUDES} DESTINATION ${blobtastic_SOURCE_DIR}/../prefix/include/blobtastic)
+INSTALL(TARGETS blobtastic
+	LIBRARY DESTINATION ${blobtastic_SOURCE_DIR}/../prefix/lib
+	RUNTIME DESTINATION ${blobtastic_SOURCE_DIR}/../prefix/lib)
+ELSE(WIN32)
+
 install(FILES ${INCLUDES} DESTINATION include/blobtastic)
 INSTALL(TARGETS blobtastic LIBRARY DESTINATION lib)
-
+ENDIF(WIN32)
 add_subdirectory(test)
