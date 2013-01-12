@@ -1,4 +1,4 @@
-#include <blobtastic/camera.h>
+#include <camera.h>
 
 int main(int argc, char* argv[])
 {

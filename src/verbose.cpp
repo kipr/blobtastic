@@ -2,6 +2,7 @@
 #include "build_options.hpp"
 
 #include <cstdarg>
+#include <cstdio>
 #include <sstream>
 
 #if VERBOSE_ERRORS
